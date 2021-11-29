@@ -31,13 +31,12 @@ database <- full_join(sup_data, lake_data)
 ```
 
 ```{r, echo = FALSE}
+
 library(ggplot2)
-select(database, Lake, Layer, pH, Collection_Date) %>%
-  group_by(Layer) %>%
-  filter(Lake == "North Sparkling Bog", Layer != "NA", pH > 0, Collection_Date
-  != "NA") %>% 
-  ggplot(mapping = aes(x = Collection_Date, y = pH, color = Layer, 
-  by = Layer)) + geom_point() + labs(color = "Layer", x = 
-  "Collection_Date", y = "pH")
+select(database, Lake, pH, Year, Month, Day) %>%
+  filter(Lake != "NA", pH > 0, Year == 2009, Month == 6) %>% 
+  ggplot(mapping = aes(x = Day, y = pH, color = Lake, 
+  by = Lake)) + geom_point() + geom_line() + labs(color = "Lake", x = 
+  "Day", y = "pH") 
 
 ```
