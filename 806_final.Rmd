@@ -1,0 +1,43 @@
+---
+title: "806_final"
+author: "Megan Worth"
+date: "11/8/2021"
+output: pdf_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, echo = FALSE}
+
+sup_data <- read.csv("C:/Users/megan/Desktop/806_final/supp_data.csv", stringsAsFactors = TRUE)
+
+lake_data <- read.csv("C:/Users/megan/Desktop/806_final/lake_data.csv", stringsAsFactors = TRUE)
+
+```
+
+```{r, echo = FALSE}
+library(dplyr)
+library(tidyr)
+```
+
+```{r, echo = FALSE}
+
+database <- full_join(sup_data, lake_data)
+
+```
+
+```{r, echo = FALSE}
+library(ggplot2)
+select(database, Lake, Layer, pH, Collection_Date) %>%
+  group_by(Layer) %>%
+  filter(Lake == "North Sparkling Bog", Layer != "NA", pH > 0, Collection_Date
+  != "NA") %>% 
+  ggplot(mapping = aes(x = Collection_Date, y = pH, color = Layer, 
+  by = Layer)) + geom_point() + labs(color = "Layer", x = 
+  "Collection_Date", y = "pH")
+
+```
