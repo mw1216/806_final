@@ -13,9 +13,13 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{r, echo = FALSE}
 
-sup_data <- read.csv("C:/Users/megan/Desktop/806_final/supp_data.csv", stringsAsFactors = TRUE)
+sup_data <- read.csv("C:/Users/megan/Desktop/806_final/supp_data1.csv", stringsAsFactors = TRUE)
 
-lake_data <- read.csv("C:/Users/megan/Desktop/806_final/lake_data.csv", stringsAsFactors = TRUE)
+lake_data <- read.csv("C:/Users/megan/Desktop/806_final/lake_data1.csv", stringsAsFactors = TRUE)
+
+otu_data <- read.csv("C:/Users/megan/Desktop/806_final/otu_data1.csv", stringsAsFactors = TRUE)
+
+rel_abun <- read.csv("C:/Users/megan/Desktop/806_final/rel_abun1.csv", stringsAsFactors = TRUE)
 
 ```
 
@@ -26,17 +30,18 @@ library(tidyr)
 
 ```{r, echo = FALSE}
 
-database <- full_join(sup_data, lake_data)
+comb1 <- right_join(otu_data, rel_abun, by = "OTU")
+comb2 <- right_join(sup_data, lake_data)
+database <- full_join(comb1, comb2)
+
 
 ```
 
 ```{r, echo = FALSE}
 
 library(ggplot2)
-select(database, Lake, pH, Year, Month, Day) %>%
-  filter(Lake != "NA", pH > 0, Year == 2009, Month == 6) %>% 
-  ggplot(mapping = aes(x = Day, y = pH, color = Lake, 
-  by = Lake)) + geom_point() + geom_line() + labs(color = "Lake", x = 
-  "Day", y = "pH") 
+select(database, Lake, Phylum, value, Year, Month, Day, Layer) %>%
+  filter(Lake == "Crystal Bog", value > 5, Year == "2009", Month == "JUN") %>% 
+  ggplot(mapping = aes(fill = Phylum, x = Layer, y = value, color = Phylum)) + geom_bar(position="stack", stat="identity") + labs(x = "Layer", y = "Abundance")
 
 ```
