@@ -30,9 +30,9 @@ library(tidyr)
 
 ```{r, echo = FALSE}
 
-comb1 <- right_join(otu_data, rel_abun, by = "OTU")
-comb2 <- right_join(sup_data, lake_data)
-database <- full_join(comb1, comb2)
+comb1 <- inner_join(otu_data, rel_abun, by = "OTU")
+comb2 <- inner_join(sup_data, lake_data)
+database <- inner_join(comb1, comb2)
 
 
 ```
@@ -40,8 +40,49 @@ database <- full_join(comb1, comb2)
 ```{r, echo = FALSE}
 
 library(ggplot2)
-select(database, Lake, Phylum, value, Year, Month, Day, Layer) %>%
-  filter(Lake == "Crystal Bog", value > 5, Year == "2009", Month == "JUN") %>% 
-  ggplot(mapping = aes(fill = Phylum, x = Layer, y = value, color = Phylum)) + geom_bar(position="stack", stat="identity") + labs(x = "Layer", y = "Abundance")
+select(database, Lake, Phylum, value, pH) %>%
+  filter(Lake == "Crystal Bog", pH > 0) %>% 
+  ggplot(mapping = aes(fill = Phylum, x = pH, y = value, color = Phylum))
+ + geom_bar(position="stack", stat="identity") + labs(x = "pH", y = "Abundance")
+
+```
+
+# this plot shows abundance of microbes varying by pH in Crystal Bog
+```{r, echo = FALSE}
+
+select(database, Lake, Phylum, value, pH) %>%
+  filter(Lake == "Crystal Bog", pH > 0) %>% 
+  ggplot(mapping = aes(x = pH, y = value)) + geom_bar(stat="identity") + labs(
+    x = "pH", y = "Abundance")
+
+```
+
+```{r, echo = FALSE}
+
+select(database, Lake, Phylum, value, pH) %>%
+  filter(Lake == "Trout Bog", pH > 0) %>% 
+  ggplot(mapping = aes(x = pH, y = value)) + geom_bar(stat="identity") + labs(
+    x = "pH", y = "Abundance")
+
+```
+
+```{r, echo = FALSE}
+
+select(database, Lake, Temperature, Month, Year) %>%
+  filter(Year == 2007, Temperature != "NA") %>% 
+  ggplot(mapping = aes(x = Month, y = Temperature, color = Lake)) +
+  geom_point() + geom_line()
+
+```
+
+```{r, echo = FALSE}
+
+select(database, Month, Year, Temperature, Lake) %>%
+  group_by(Lake, Month) %>%
+  filter(Temperature > 0, Year == 2007) %>%
+  summarize(mean_temp_month = mean(Temperature)) %>%
+  ggplot(mapping = aes(x = Month, y = mean_temp_month, color = 
+  Lake, by = Lake)) + geom_point() + geom_line() + labs(color = 
+  "Lake", x = "Month", y = "Temperature (C)")
 
 ```
