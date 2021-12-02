@@ -6,6 +6,7 @@ output: pdf_document
 editor_options: 
   chunk_output_type: console
 ---
+## Introduction
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
@@ -47,25 +48,25 @@ select(database, Lake, Phylum, value, pH) %>%
 
 ```
 
-# this plot shows abundance of microbes varying by pH in Crystal Bog
+# this plot shows abundance of microbes by varying pH in Crystal Bog
 ```{r, echo = FALSE}
 
 select(database, Lake, Phylum, value, pH) %>%
   filter(Lake == "Crystal Bog", pH > 0) %>% 
-  ggplot(mapping = aes(x = pH, y = value)) + geom_bar(stat="identity") + labs(
-    x = "pH", y = "Abundance")
+  ggplot(mapping = aes(x = pH, y = value)) + geom_bar(stat="identity") + 
+  labs(x = "pH", y = "Abundance")
 
 ```
-
+# space to practice making graphs / not finalized
 ```{r, echo = FALSE}
 
 select(database, Lake, Phylum, value, pH) %>%
   filter(Lake == "Trout Bog", pH > 0) %>% 
-  ggplot(mapping = aes(x = pH, y = value)) + geom_bar(stat="identity") + labs(
-    x = "pH", y = "Abundance")
+  ggplot(mapping = aes(x = pH, y = value)) + geom_bar(stat="identity") + 
+  labs(x = "pH", y = "Abundance")
 
 ```
-
+# practice graph space
 ```{r, echo = FALSE}
 
 select(database, Lake, Temperature, Month, Year) %>%
@@ -75,14 +76,42 @@ select(database, Lake, Temperature, Month, Year) %>%
 
 ```
 
+# plot shows average temp per month recorded for each lake in 2007
 ```{r, echo = FALSE}
 
 select(database, Month, Year, Temperature, Lake) %>%
   group_by(Lake, Month) %>%
-  filter(Temperature > 0, Year == 2007) %>%
-  summarize(mean_temp_month = mean(Temperature)) %>%
-  ggplot(mapping = aes(x = Month, y = mean_temp_month, color = 
-  Lake, by = Lake)) + geom_point() + geom_line() + labs(color = 
+  filter(Temperature != "NA", Year == 2007) %>%
+  summarize(mean_temp = mean(Temperature)) %>%
+  ggplot(mapping = aes(x = Month, y = mean_temp, color = 
+  Lake, group = Lake)) + geom_point() + geom_line() + labs(color = 
   "Lake", x = "Month", y = "Temperature (C)")
 
 ```
+
+```{r, echo = FALSE}
+
+select(database, Month, Year, DO, Lake) %>%
+  group_by(Lake, Month) %>%
+  filter(DO != "NA", Year == 2007) %>%
+  summarize(mean_DO = mean(DO)) %>%
+  ggplot(mapping = aes(x = Month, y = mean_DO, color = 
+  Lake, group = Lake)) + geom_point() + geom_line() + labs(color = 
+  "Lake", x = "Month", y = "Dissolved Oxygen (DO)")
+
+```
+
+```{r, echo = FALSE}
+
+select(database, Month, Year, pH, Lake) %>%
+  group_by(Lake, Month) %>%
+  filter(pH != "NA", Year == 2009) %>%
+  summarize(mean_pH = mean(pH)) %>%
+  ggplot(mapping = aes(x = Month, y = mean_pH, color = 
+  Lake, group = Lake)) + geom_point() + geom_line() + labs(color = 
+  "Lake", x = "Month", y = "pH")
+
+```
+
+
+
