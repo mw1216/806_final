@@ -6,7 +6,11 @@ output: pdf_document
 editor_options: 
   chunk_output_type: console
 ---
-## Introduction
+**Introduction**
+
+**Methods**
+
+**Results**
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
@@ -43,8 +47,9 @@ database <- inner_join(comb1, comb2)
 library(ggplot2)
 select(database, Lake, Phylum, value, pH) %>%
   filter(Lake == "Crystal Bog", pH > 0) %>% 
-  ggplot(mapping = aes(fill = Phylum, x = pH, y = value, color = Phylum))
- + geom_bar(position="stack", stat="identity") + labs(x = "pH", y = "Abundance")
+  ggplot(mapping = aes(fill = Phylum, x = pH, y = value, color =
+  Phylum)) + geom_bar(position="stack", stat="identity") + geom_smooth() + 
+  labs(x = "pH", y = "Abundance")
 
 ```
 
@@ -57,6 +62,7 @@ select(database, Lake, Phylum, value, pH) %>%
   labs(x = "pH", y = "Abundance")
 
 ```
+
 # space to practice making graphs / not finalized
 ```{r, echo = FALSE}
 
@@ -66,6 +72,7 @@ select(database, Lake, Phylum, value, pH) %>%
   labs(x = "pH", y = "Abundance")
 
 ```
+
 # practice graph space
 ```{r, echo = FALSE}
 
@@ -112,6 +119,13 @@ select(database, Month, Year, pH, Lake) %>%
   "Lake", x = "Month", y = "pH")
 
 ```
+
+
+**Discussion**
+
+
+
+**References**
 
 
 
