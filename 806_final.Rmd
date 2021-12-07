@@ -41,8 +41,8 @@ library(tidyr)
 ```{r, echo = FALSE}
 
 comb1 <- inner_join(otu_data, rel_abun, by = "OTU")
-comb2 <- inner_join(sup_data, lake_data)
-database <- inner_join(comb1, comb2)
+comb2 <- distinct(inner_join(sup_data, lake_data))
+database <- distinct(inner_join(comb1, comb2))
 
 
 ```
@@ -60,6 +60,17 @@ select(database, Phylum, value, pH, Year) %>%
   legend.key.size = unit(0.45, "cm"), 
   legend.key.height = unit(0.45, "cm"),  
   legend.key.width = unit(0.45, "cm"))
+
+```
+
+# working on making a distance matrix 
+OTUs as row names, samples as columns
+vegdist(database)
+
+```{r, echo = FALSE}
+select(database, OTU, Sample_Name, value) -> data
+  as.matrix(data,) -> dist_matrix
+vegdist(., method = "bray") -> dist_matrix
 
 ```
 
@@ -89,12 +100,12 @@ select(database, Month, Year, DO) %>%
 
 ```
 
-# depth vs. dissolved oxygen measured - needs work
+# depth vs. dissolved oxygen measured - needs work (only set to show June 2009)
 ```{r, echo = FALSE}
 
-select(database, Depth, DO) %>%
-  filter(DO != "NA", Depth != "NA") %>%
-  ggplot(mapping = aes(x = Depth, y = DO)) + geom_point() + geom_line() + labs(x = "Depth", y = "Dissolved Oxygen") + scale_color_brewer(palette = "Dark2")
+select(database, Depth, DO, Month, Year) %>%
+  filter(DO != "NA", Depth != "NA", Month == "6", Year == "2009") %>%
+  ggplot(mapping = aes(x = Depth, y = DO)) + geom_point() + geom_line() + labs(x = "Depth", y = "Dissolved Oxygen")
 
 ```
 

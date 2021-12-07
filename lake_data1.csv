@@ -1,154 +1,154 @@
-Sample_Name,Month,Day,Year,Lake,Layer,Accession_Number,subproject
-CBU,7,1,2005,Crystal Bog,Unknown,ERP016854,Earth Microbiome Project
-CBU,8,2,2005,Crystal Bog,Unknown,ERP016854,Earth Microbiome Project
-CBU,6,3,2005,Crystal Bog,Unknown,ERP016854,Earth Microbiome Project
-CBU,8,5,2005,Crystal Bog,Unknown,ERP016854,Earth Microbiome Project
-CBU,7,5,2005,Crystal Bog,Unknown,ERP016854,Earth Microbiome Project
-CBU,6,7,2005,Crystal Bog,Unknown,ERP016854,Earth Microbiome Project
-CBU,7,8,2005,Crystal Bog,Unknown,ERP016854,Earth Microbiome Project
-CBU,8,10,2005,Crystal Bog,Unknown,ERP016854,Earth Microbiome Project
-CBU,6,10,2005,Crystal Bog,Unknown,ERP016854,Earth Microbiome Project
-CBU,7,12,2005,Crystal Bog,Unknown,ERP016854,Earth Microbiome Project
-CBU,6,12,2005,Crystal Bog,Unknown,ERP016854,Earth Microbiome Project
-CBU,7,14,2005,Crystal Bog,Unknown,ERP016854,Earth Microbiome Project
-CBU,6,14,2005,Crystal Bog,Unknown,ERP016854,Earth Microbiome Project
-CBU,6,17,2005,Crystal Bog,Unknown,ERP016854,Earth Microbiome Project
-CBU,7,19,2005,Crystal Bog,Unknown,ERP016854,Earth Microbiome Project
-CBU,6,21,2005,Crystal Bog,Unknown,ERP016854,Earth Microbiome Project
-CBU,6,24,2005,Crystal Bog,Unknown,ERP016854,Earth Microbiome Project
-CBU,5,24,2005,Crystal Bog,Unknown,ERP016854,Earth Microbiome Project
-CBU,5,27,2005,Crystal Bog,Unknown,ERP016854,Earth Microbiome Project
-CBU,7,28,2005,Crystal Bog,Unknown,ERP016854,Earth Microbiome Project
-CBU,6,28,2005,Crystal Bog,Unknown,ERP016854,Earth Microbiome Project
-CBU,8,30,2005,Crystal Bog,Unknown,ERP016854,Earth Microbiome Project
-CBU,5,31,2005,Crystal Bog,Unknown,ERP016854,Earth Microbiome Project
-CBE,1,1,2007,Crystal Bog,Epilimnion,ERP016854,Earth Microbiome Project
-CBE,1,1,2007,Crystal Bog,Epilimnion,ERP016854,Earth Microbiome Project
-CBE,8,2,2007,Crystal Bog,Epilimnion,ERP016854,Earth Microbiome Project
-CBE,8,2,2007,Crystal Bog,Epilimnion,ERP016854,Earth Microbiome Project
-CBE,8,2,2009,Crystal Bog,Epilimnion,ERP016854,Earth Microbiome Project
-CBE,7,2,2007,Crystal Bog,Epilimnion,ERP016854,Earth Microbiome Project
-CBE,7,2,2007,Crystal Bog,Epilimnion,ERP016854,Earth Microbiome Project
-CBE,6,3,2009,Crystal Bog,Epilimnion,ERP016854,Earth Microbiome Project
-CBE,7,5,2007,Crystal Bog,Epilimnion,ERP016854,Earth Microbiome Project
-CBE,7,5,2007,Crystal Bog,Epilimnion,ERP016854,Earth Microbiome Project
-CBE,8,6,2007,Crystal Bog,Epilimnion,ERP016854,Earth Microbiome Project
-CBE,1,6,2007,Crystal Bog,Epilimnion,ERP016854,Earth Microbiome Project
-CBE,1,6,2007,Crystal Bog,Epilimnion,ERP016854,Earth Microbiome Project
-CBE,7,7,2009,Crystal Bog,Epilimnion,ERP016854,Earth Microbiome Project
-CBE,6,8,2009,Crystal Bog,Epilimnion,ERP016854,Earth Microbiome Project
-CBE,8,9,2007,Crystal Bog,Epilimnion,ERP016854,Earth Microbiome Project
-CBE,8,9,2007,Crystal Bog,Epilimnion,ERP016854,Earth Microbiome Project
-CBE,7,10,2007,Crystal Bog,Epilimnion,ERP016854,Earth Microbiome Project
-CBE,7,10,2007,Crystal Bog,Epilimnion,ERP016854,Earth Microbiome Project
-CBE,9,10,2007,Crystal Bog,Epilimnion,ERP016854,Earth Microbiome Project
-CBE,9,10,2007,Crystal Bog,Epilimnion,ERP016854,Earth Microbiome Project
-CBE,8,12,2009,Crystal Bog,Epilimnion,ERP016854,Earth Microbiome Project
-CBE,7,12,2007,Crystal Bog,Epilimnion,ERP016854,Earth Microbiome Project
-CBE,7,12,2007,Crystal Bog,Epilimnion,ERP016854,Earth Microbiome Project
-CBE,7,13,2009,Crystal Bog,Epilimnion,ERP016854,Earth Microbiome Project
-CBE,6,15,2009,Crystal Bog,Epilimnion,ERP016854,Earth Microbiome Project
-CBE,7,16,2007,Crystal Bog,Epilimnion,ERP016854,Earth Microbiome Project
-CBE,7,16,2007,Crystal Bog,Epilimnion,ERP016854,Earth Microbiome Project
-CBE,1,16,2007,Crystal Bog,Epilimnion,ERP016854,Earth Microbiome Project
-CBE,1,16,2007,Crystal Bog,Epilimnion,ERP016854,Earth Microbiome Project
-CBE,9,17,2007,Crystal Bog,Epilimnion,ERP016854,Earth Microbiome Project
-CBE,9,17,2007,Crystal Bog,Epilimnion,ERP016854,Earth Microbiome Project
-CBE,8,18,2009,Crystal Bog,Epilimnion,ERP016854,Earth Microbiome Project
-CBE,7,18,2007,Crystal Bog,Epilimnion,ERP016854,Earth Microbiome Project
-CBE,7,18,2007,Crystal Bog,Epilimnion,ERP016854,Earth Microbiome Project
-CBE,6,19,2007,Crystal Bog,Epilimnion,ERP016854,Earth Microbiome Project
-CBE,6,19,2007,Crystal Bog,Epilimnion,ERP016854,Earth Microbiome Project
-CBE,8,20,2007,Crystal Bog,Epilimnion,ERP016854,Earth Microbiome Project
-CBE,7,21,2009,Crystal Bog,Epilimnion,ERP016854,Earth Microbiome Project
-CBE,6,21,2007,Crystal Bog,Epilimnion,ERP016854,Earth Microbiome Project
-CBE,6,21,2007,Crystal Bog,Epilimnion,ERP016854,Earth Microbiome Project
-CBE,8,23,2007,Crystal Bog,Epilimnion,ERP016854,Earth Microbiome Project
-CBE,8,23,2007,Crystal Bog,Epilimnion,ERP016854,Earth Microbiome Project
-CBE,6,23,2009,Crystal Bog,Epilimnion,ERP016854,Earth Microbiome Project
-CBE,1,23,2007,Crystal Bog,Epilimnion,ERP016854,Earth Microbiome Project
-CBE,1,23,2007,Crystal Bog,Epilimnion,ERP016854,Earth Microbiome Project
-CBE,8,24,2009,Crystal Bog,Epilimnion,ERP016854,Earth Microbiome Project
-CBE,7,25,2007,Crystal Bog,Epilimnion,ERP016854,Earth Microbiome Project
-CBE,7,25,2007,Crystal Bog,Epilimnion,ERP016854,Earth Microbiome Project
-CBE,9,25,2007,Crystal Bog,Epilimnion,ERP016854,Earth Microbiome Project
-CBE,9,25,2007,Crystal Bog,Epilimnion,ERP016854,Earth Microbiome Project
-CBE,8,27,2007,Crystal Bog,Epilimnion,ERP016854,Earth Microbiome Project
-CBE,8,27,2007,Crystal Bog,Epilimnion,ERP016854,Earth Microbiome Project
-CBE,7,27,2007,Crystal Bog,Epilimnion,ERP016854,Earth Microbiome Project
-CBE,7,27,2007,Crystal Bog,Epilimnion,ERP016854,Earth Microbiome Project
-CBE,7,27,2009,Crystal Bog,Epilimnion,ERP016854,Earth Microbiome Project
-CBE,6,27,2007,Crystal Bog,Epilimnion,ERP016854,Earth Microbiome Project
-CBE,6,27,2007,Crystal Bog,Epilimnion,ERP016854,Earth Microbiome Project
-CBE,6,29,2007,Crystal Bog,Epilimnion,ERP016854,Earth Microbiome Project
-CBE,6,29,2007,Crystal Bog,Epilimnion,ERP016854,Earth Microbiome Project
-CBE,6,29,2009,Crystal Bog,Epilimnion,ERP016854,Earth Microbiome Project
-CBE,5,29,2009,Crystal Bog,Epilimnion,ERP016854,Earth Microbiome Project
-CBE,1,29,2007,Crystal Bog,Epilimnion,ERP016854,Earth Microbiome Project
-CBE,7,31,2007,Crystal Bog,Epilimnion,ERP016854,Earth Microbiome Project
-CBE,7,31,2007,Crystal Bog,Epilimnion,ERP016854,Earth Microbiome Project
-CBH,1,1,2007,Crystal Bog,Hypolimnion,ERP016854,Earth Microbiome Project
-CBH,1,1,2007,Crystal Bog,Hypolimnion,ERP016854,Earth Microbiome Project
-CBH,8,2,2009,Crystal Bog,Hypolimnion,ERP016854,Earth Microbiome Project
-CBH,7,2,2007,Crystal Bog,Hypolimnion,ERP016854,Earth Microbiome Project
-CBH,7,2,2007,Crystal Bog,Hypolimnion,ERP016854,Earth Microbiome Project
-CBH,6,3,2009,Crystal Bog,Hypolimnion,ERP016854,Earth Microbiome Project
-CBH,7,5,2007,Crystal Bog,Hypolimnion,ERP016854,Earth Microbiome Project
-CBH,7,5,2007,Crystal Bog,Hypolimnion,ERP016854,Earth Microbiome Project
-CBH,8,6,2007,Crystal Bog,Hypolimnion,ERP016854,Earth Microbiome Project
-CBH,8,6,2007,Crystal Bog,Hypolimnion,ERP016854,Earth Microbiome Project
-CBH,1,6,2007,Crystal Bog,Hypolimnion,ERP016854,Earth Microbiome Project
-CBH,1,6,2007,Crystal Bog,Hypolimnion,ERP016854,Earth Microbiome Project
-CBH,7,7,2009,Crystal Bog,Hypolimnion,ERP016854,Earth Microbiome Project
-CBH,6,8,2009,Crystal Bog,Hypolimnion,ERP016854,Earth Microbiome Project
-CBH,8,9,2007,Crystal Bog,Hypolimnion,ERP016854,Earth Microbiome Project
-CBH,8,9,2007,Crystal Bog,Hypolimnion,ERP016854,Earth Microbiome Project
-CBH,7,10,2007,Crystal Bog,Hypolimnion,ERP016854,Earth Microbiome Project
-CBH,7,10,2007,Crystal Bog,Hypolimnion,ERP016854,Earth Microbiome Project
-CBH,9,10,2007,Crystal Bog,Hypolimnion,ERP016854,Earth Microbiome Project
-CBH,9,10,2007,Crystal Bog,Hypolimnion,ERP016854,Earth Microbiome Project
-CBH,8,12,2009,Crystal Bog,Hypolimnion,ERP016854,Earth Microbiome Project
-CBH,7,12,2007,Crystal Bog,Hypolimnion,ERP016854,Earth Microbiome Project
-CBH,7,12,2007,Crystal Bog,Hypolimnion,ERP016854,Earth Microbiome Project
-CBH,7,13,2009,Crystal Bog,Hypolimnion,ERP016854,Earth Microbiome Project
-CBH,6,15,2009,Crystal Bog,Hypolimnion,ERP016854,Earth Microbiome Project
-CBH,7,16,2007,Crystal Bog,Hypolimnion,ERP016854,Earth Microbiome Project
-CBH,7,16,2007,Crystal Bog,Hypolimnion,ERP016854,Earth Microbiome Project
-CBH,1,16,2007,Crystal Bog,Hypolimnion,ERP016854,Earth Microbiome Project
-CBH,1,16,2007,Crystal Bog,Hypolimnion,ERP016854,Earth Microbiome Project
-CBH,9,17,2007,Crystal Bog,Hypolimnion,ERP016854,Earth Microbiome Project
-CBH,9,17,2007,Crystal Bog,Hypolimnion,ERP016854,Earth Microbiome Project
-CBH,8,18,2009,Crystal Bog,Hypolimnion,ERP016854,Earth Microbiome Project
-CBH,7,18,2007,Crystal Bog,Hypolimnion,ERP016854,Earth Microbiome Project
-CBH,7,18,2007,Crystal Bog,Hypolimnion,ERP016854,Earth Microbiome Project
-CBH,6,19,2007,Crystal Bog,Hypolimnion,ERP016854,Earth Microbiome Project
-CBH,6,19,2007,Crystal Bog,Hypolimnion,ERP016854,Earth Microbiome Project
-CBH,8,20,2007,Crystal Bog,Hypolimnion,ERP016854,Earth Microbiome Project
-CBH,8,20,2007,Crystal Bog,Hypolimnion,ERP016854,Earth Microbiome Project
-CBH,7,21,2009,Crystal Bog,Hypolimnion,ERP016854,Earth Microbiome Project
-CBH,6,21,2007,Crystal Bog,Hypolimnion,ERP016854,Earth Microbiome Project
-CBH,6,21,2007,Crystal Bog,Hypolimnion,ERP016854,Earth Microbiome Project
-CBH,8,23,2007,Crystal Bog,Hypolimnion,ERP016854,Earth Microbiome Project
-CBH,8,23,2007,Crystal Bog,Hypolimnion,ERP016854,Earth Microbiome Project
-CBH,6,23,2009,Crystal Bog,Hypolimnion,ERP016854,Earth Microbiome Project
-CBH,1,23,2007,Crystal Bog,Hypolimnion,ERP016854,Earth Microbiome Project
-CBH,1,23,2007,Crystal Bog,Hypolimnion,ERP016854,Earth Microbiome Project
-CBH,8,24,2009,Crystal Bog,Hypolimnion,ERP016854,Earth Microbiome Project
-CBH,7,25,2007,Crystal Bog,Hypolimnion,ERP016854,Earth Microbiome Project
-CBH,7,25,2007,Crystal Bog,Hypolimnion,ERP016854,Earth Microbiome Project
-CBH,9,25,2007,Crystal Bog,Hypolimnion,ERP016854,Earth Microbiome Project
-CBH,9,25,2007,Crystal Bog,Hypolimnion,ERP016854,Earth Microbiome Project
-CBH,8,27,2007,Crystal Bog,Hypolimnion,ERP016854,Earth Microbiome Project
-CBH,8,27,2007,Crystal Bog,Hypolimnion,ERP016854,Earth Microbiome Project
-CBH,7,27,2007,Crystal Bog,Hypolimnion,ERP016854,Earth Microbiome Project
-CBH,7,27,2007,Crystal Bog,Hypolimnion,ERP016854,Earth Microbiome Project
-CBH,7,27,2009,Crystal Bog,Hypolimnion,ERP016854,Earth Microbiome Project
-CBH,6,27,2007,Crystal Bog,Hypolimnion,ERP016854,Earth Microbiome Project
-CBH,6,27,2007,Crystal Bog,Hypolimnion,ERP016854,Earth Microbiome Project
-CBH,6,29,2007,Crystal Bog,Hypolimnion,ERP016854,Earth Microbiome Project
-CBH,6,29,2007,Crystal Bog,Hypolimnion,ERP016854,Earth Microbiome Project
-CBH,6,29,2009,Crystal Bog,Hypolimnion,ERP016854,Earth Microbiome Project
-CBH,5,29,2009,Crystal Bog,Hypolimnion,ERP016854,Earth Microbiome Project
-CBH,1,29,2007,Crystal Bog,Hypolimnion,ERP016854,Earth Microbiome Project
-CBH,1,29,2007,Crystal Bog,Hypolimnion,ERP016854,Earth Microbiome Project
-CBH,7,31,2007,Crystal Bog,Hypolimnion,ERP016854,Earth Microbiome Project
+Sample_Name,Month,Day,Year,Lake,Layer
+CBU,7,1,2005,Crystal Bog,Unknown
+CBU,8,2,2005,Crystal Bog,Unknown
+CBU,6,3,2005,Crystal Bog,Unknown
+CBU,8,5,2005,Crystal Bog,Unknown
+CBU,7,5,2005,Crystal Bog,Unknown
+CBU,6,7,2005,Crystal Bog,Unknown
+CBU,7,8,2005,Crystal Bog,Unknown
+CBU,8,10,2005,Crystal Bog,Unknown
+CBU,6,10,2005,Crystal Bog,Unknown
+CBU,7,12,2005,Crystal Bog,Unknown
+CBU,6,12,2005,Crystal Bog,Unknown
+CBU,7,14,2005,Crystal Bog,Unknown
+CBU,6,14,2005,Crystal Bog,Unknown
+CBU,6,17,2005,Crystal Bog,Unknown
+CBU,7,19,2005,Crystal Bog,Unknown
+CBU,6,21,2005,Crystal Bog,Unknown
+CBU,6,24,2005,Crystal Bog,Unknown
+CBU,5,24,2005,Crystal Bog,Unknown
+CBU,5,27,2005,Crystal Bog,Unknown
+CBU,7,28,2005,Crystal Bog,Unknown
+CBU,6,28,2005,Crystal Bog,Unknown
+CBU,8,30,2005,Crystal Bog,Unknown
+CBU,5,31,2005,Crystal Bog,Unknown
+CBE,1,1,2007,Crystal Bog,Epilimnion
+CBE,1,1,2007,Crystal Bog,Epilimnion
+CBE,8,2,2007,Crystal Bog,Epilimnion
+CBE,8,2,2007,Crystal Bog,Epilimnion
+CBE,8,2,2009,Crystal Bog,Epilimnion
+CBE,7,2,2007,Crystal Bog,Epilimnion
+CBE,7,2,2007,Crystal Bog,Epilimnion
+CBE,6,3,2009,Crystal Bog,Epilimnion
+CBE,7,5,2007,Crystal Bog,Epilimnion
+CBE,7,5,2007,Crystal Bog,Epilimnion
+CBE,8,6,2007,Crystal Bog,Epilimnion
+CBE,1,6,2007,Crystal Bog,Epilimnion
+CBE,1,6,2007,Crystal Bog,Epilimnion
+CBE,7,7,2009,Crystal Bog,Epilimnion
+CBE,6,8,2009,Crystal Bog,Epilimnion
+CBE,8,9,2007,Crystal Bog,Epilimnion
+CBE,8,9,2007,Crystal Bog,Epilimnion
+CBE,7,10,2007,Crystal Bog,Epilimnion
+CBE,7,10,2007,Crystal Bog,Epilimnion
+CBE,9,10,2007,Crystal Bog,Epilimnion
+CBE,9,10,2007,Crystal Bog,Epilimnion
+CBE,8,12,2009,Crystal Bog,Epilimnion
+CBE,7,12,2007,Crystal Bog,Epilimnion
+CBE,7,12,2007,Crystal Bog,Epilimnion
+CBE,7,13,2009,Crystal Bog,Epilimnion
+CBE,6,15,2009,Crystal Bog,Epilimnion
+CBE,7,16,2007,Crystal Bog,Epilimnion
+CBE,7,16,2007,Crystal Bog,Epilimnion
+CBE,1,16,2007,Crystal Bog,Epilimnion
+CBE,1,16,2007,Crystal Bog,Epilimnion
+CBE,9,17,2007,Crystal Bog,Epilimnion
+CBE,9,17,2007,Crystal Bog,Epilimnion
+CBE,8,18,2009,Crystal Bog,Epilimnion
+CBE,7,18,2007,Crystal Bog,Epilimnion
+CBE,7,18,2007,Crystal Bog,Epilimnion
+CBE,6,19,2007,Crystal Bog,Epilimnion
+CBE,6,19,2007,Crystal Bog,Epilimnion
+CBE,8,20,2007,Crystal Bog,Epilimnion
+CBE,7,21,2009,Crystal Bog,Epilimnion
+CBE,6,21,2007,Crystal Bog,Epilimnion
+CBE,6,21,2007,Crystal Bog,Epilimnion
+CBE,8,23,2007,Crystal Bog,Epilimnion
+CBE,8,23,2007,Crystal Bog,Epilimnion
+CBE,6,23,2009,Crystal Bog,Epilimnion
+CBE,1,23,2007,Crystal Bog,Epilimnion
+CBE,1,23,2007,Crystal Bog,Epilimnion
+CBE,8,24,2009,Crystal Bog,Epilimnion
+CBE,7,25,2007,Crystal Bog,Epilimnion
+CBE,7,25,2007,Crystal Bog,Epilimnion
+CBE,9,25,2007,Crystal Bog,Epilimnion
+CBE,9,25,2007,Crystal Bog,Epilimnion
+CBE,8,27,2007,Crystal Bog,Epilimnion
+CBE,8,27,2007,Crystal Bog,Epilimnion
+CBE,7,27,2007,Crystal Bog,Epilimnion
+CBE,7,27,2007,Crystal Bog,Epilimnion
+CBE,7,27,2009,Crystal Bog,Epilimnion
+CBE,6,27,2007,Crystal Bog,Epilimnion
+CBE,6,27,2007,Crystal Bog,Epilimnion
+CBE,6,29,2007,Crystal Bog,Epilimnion
+CBE,6,29,2007,Crystal Bog,Epilimnion
+CBE,6,29,2009,Crystal Bog,Epilimnion
+CBE,5,29,2009,Crystal Bog,Epilimnion
+CBE,1,29,2007,Crystal Bog,Epilimnion
+CBE,7,31,2007,Crystal Bog,Epilimnion
+CBE,7,31,2007,Crystal Bog,Epilimnion
+CBH,1,1,2007,Crystal Bog,Hypolimnion
+CBH,1,1,2007,Crystal Bog,Hypolimnion
+CBH,8,2,2009,Crystal Bog,Hypolimnion
+CBH,7,2,2007,Crystal Bog,Hypolimnion
+CBH,7,2,2007,Crystal Bog,Hypolimnion
+CBH,6,3,2009,Crystal Bog,Hypolimnion
+CBH,7,5,2007,Crystal Bog,Hypolimnion
+CBH,7,5,2007,Crystal Bog,Hypolimnion
+CBH,8,6,2007,Crystal Bog,Hypolimnion
+CBH,8,6,2007,Crystal Bog,Hypolimnion
+CBH,1,6,2007,Crystal Bog,Hypolimnion
+CBH,1,6,2007,Crystal Bog,Hypolimnion
+CBH,7,7,2009,Crystal Bog,Hypolimnion
+CBH,6,8,2009,Crystal Bog,Hypolimnion
+CBH,8,9,2007,Crystal Bog,Hypolimnion
+CBH,8,9,2007,Crystal Bog,Hypolimnion
+CBH,7,10,2007,Crystal Bog,Hypolimnion
+CBH,7,10,2007,Crystal Bog,Hypolimnion
+CBH,9,10,2007,Crystal Bog,Hypolimnion
+CBH,9,10,2007,Crystal Bog,Hypolimnion
+CBH,8,12,2009,Crystal Bog,Hypolimnion
+CBH,7,12,2007,Crystal Bog,Hypolimnion
+CBH,7,12,2007,Crystal Bog,Hypolimnion
+CBH,7,13,2009,Crystal Bog,Hypolimnion
+CBH,6,15,2009,Crystal Bog,Hypolimnion
+CBH,7,16,2007,Crystal Bog,Hypolimnion
+CBH,7,16,2007,Crystal Bog,Hypolimnion
+CBH,1,16,2007,Crystal Bog,Hypolimnion
+CBH,1,16,2007,Crystal Bog,Hypolimnion
+CBH,9,17,2007,Crystal Bog,Hypolimnion
+CBH,9,17,2007,Crystal Bog,Hypolimnion
+CBH,8,18,2009,Crystal Bog,Hypolimnion
+CBH,7,18,2007,Crystal Bog,Hypolimnion
+CBH,7,18,2007,Crystal Bog,Hypolimnion
+CBH,6,19,2007,Crystal Bog,Hypolimnion
+CBH,6,19,2007,Crystal Bog,Hypolimnion
+CBH,8,20,2007,Crystal Bog,Hypolimnion
+CBH,8,20,2007,Crystal Bog,Hypolimnion
+CBH,7,21,2009,Crystal Bog,Hypolimnion
+CBH,6,21,2007,Crystal Bog,Hypolimnion
+CBH,6,21,2007,Crystal Bog,Hypolimnion
+CBH,8,23,2007,Crystal Bog,Hypolimnion
+CBH,8,23,2007,Crystal Bog,Hypolimnion
+CBH,6,23,2009,Crystal Bog,Hypolimnion
+CBH,1,23,2007,Crystal Bog,Hypolimnion
+CBH,1,23,2007,Crystal Bog,Hypolimnion
+CBH,8,24,2009,Crystal Bog,Hypolimnion
+CBH,7,25,2007,Crystal Bog,Hypolimnion
+CBH,7,25,2007,Crystal Bog,Hypolimnion
+CBH,9,25,2007,Crystal Bog,Hypolimnion
+CBH,9,25,2007,Crystal Bog,Hypolimnion
+CBH,8,27,2007,Crystal Bog,Hypolimnion
+CBH,8,27,2007,Crystal Bog,Hypolimnion
+CBH,7,27,2007,Crystal Bog,Hypolimnion
+CBH,7,27,2007,Crystal Bog,Hypolimnion
+CBH,7,27,2009,Crystal Bog,Hypolimnion
+CBH,6,27,2007,Crystal Bog,Hypolimnion
+CBH,6,27,2007,Crystal Bog,Hypolimnion
+CBH,6,29,2007,Crystal Bog,Hypolimnion
+CBH,6,29,2007,Crystal Bog,Hypolimnion
+CBH,6,29,2009,Crystal Bog,Hypolimnion
+CBH,5,29,2009,Crystal Bog,Hypolimnion
+CBH,1,29,2007,Crystal Bog,Hypolimnion
+CBH,1,29,2007,Crystal Bog,Hypolimnion
+CBH,7,31,2007,Crystal Bog,Hypolimnion
