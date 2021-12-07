@@ -43,13 +43,17 @@ database <- inner_join(comb1, comb2)
 ```
 
 ```{r, echo = FALSE}
-
+# come back to this later
 library(ggplot2)
-select(database, Lake, Phylum, value, pH) %>%
-  filter(Lake == "Crystal Bog", pH > 0) %>% 
+select(database, Phylum, value, pH, Year) %>%
+  filter(Year == 2009, pH > 0) %>% 
   ggplot(mapping = aes(fill = Phylum, x = pH, y = value, color =
-  Phylum)) + geom_bar(position="stack", stat="identity") + geom_smooth() + 
-  labs(x = "pH", y = "Abundance")
+  Phylum)) + geom_bar(position="stack", stat="identity") + 
+  labs(x = "pH", y = "Abundance") +
+  theme(legend.text = element_text(size = 6), 
+  legend.key.size = unit(0.5, "cm"), 
+  legend.key.height = unit(0.5, "cm"),  
+  legend.key.width = unit(0.5, "cm"))
 
 ```
 
@@ -57,19 +61,18 @@ select(database, Lake, Phylum, value, pH) %>%
 ```{r, echo = FALSE}
 
 select(database, Lake, Phylum, value, pH) %>%
-  filter(Lake == "Crystal Bog", pH > 0) %>% 
+  filter(pH > 0) %>% 
   ggplot(mapping = aes(x = pH, y = value)) + geom_bar(stat="identity") + 
-  labs(x = "pH", y = "Abundance")
+  labs(x = "pH", y = "Abundance") 
 
 ```
 
 # space to practice making graphs / not finalized
 ```{r, echo = FALSE}
 
-select(database, Lake, Phylum, value, pH) %>%
-  filter(Lake == "Trout Bog", pH > 0) %>% 
-  ggplot(mapping = aes(x = pH, y = value)) + geom_bar(stat="identity") + 
-  labs(x = "pH", y = "Abundance")
+select(database, Month, Year, Temperature) %>%
+  filter(Temperature > 0) %>% 
+  ggplot(mapping = aes(x = Month, y = Temperature, by = Year)) + labs(x = "Month", y = "Temperature (C)") + geom_line() + geom_point()
 
 ```
 
@@ -83,16 +86,15 @@ select(database, Lake, Temperature, Month, Year) %>%
 
 ```
 
-# plot shows average temp per month recorded for each lake in 2007
 ```{r, echo = FALSE}
 
-select(database, Month, Year, Temperature, Lake) %>%
-  group_by(Lake, Month) %>%
-  filter(Temperature != "NA", Year == 2007) %>%
+select(database, Month, Year, Temperature) %>%
+  group_by(Month, Year) %>%
+  filter(Temperature != "NA") %>%
   summarize(mean_temp = mean(Temperature)) %>%
   ggplot(mapping = aes(x = Month, y = mean_temp, color = 
-  Lake, group = Lake)) + geom_point() + geom_line() + labs(color = 
-  "Lake", x = "Month", y = "Temperature (C)")
+  Year, group = Year)) + geom_point() + geom_line() + labs(color = 
+  "Year", x = "Month", y = "Temperature (C)")
 
 ```
 
