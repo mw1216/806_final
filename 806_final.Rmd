@@ -7,9 +7,14 @@ editor_options:
   chunk_output_type: console
 ---
 **Introduction**
+  
+  Microbial communities are responsible for carrying out crucial ecosystem functions and processes, and are therefore essential to life on Earth (Li et al., 2015). Specifically, in aquatic systems, bacterial communities play vital roles in biogeochemical cycling (Monard et al., 2016). Knowledge of the composition, structure, and distribution of microbial communities can be utilized to predict how an ecosystem may respond to environmental changes over time (Monard et al., 2016; Sieber et al., 2020).
+  The North Temperate Lakes Long Term Ecological Research (LTER) program located in Vilas County, Wisconsin has collected a myriad of data from lakes and bogs in the area. In 2007 and 2009, data on pH, dissolved oxygen (DO), and temperature were collected from Crystal Bog. Additionally, samples were collected and analyzed to identify members of the microbial community by 16S rRNA sequencing (McMahon et al., 2019). This dataset was analyzed using R v. 4.1.1 to gain an understanding of the influence these environmental factors (pH, DO, temperature) may have had on microbial community composition between 2007 and 2009.
 
 **Methods**
 
+  Data was collected by researchers through the North Temperate Lakes LTER in Vilas County, Wisconsin. Freshwater samples were collected from Crystal Bog in 2007 and 2009 and 16S rRNA sequencing was performed. Data was analyzed using R v. 4.1.1. The vegan package was used to generate (NMDS or PCoA) ordinations to visualize relatedness of microbial community samples according to (depth, layer, DO, pH, or temperature).
+  
 **Results**
 
 ```{r setup, include=FALSE}
@@ -52,9 +57,9 @@ select(database, Phylum, value, pH, Year) %>%
   Phylum)) + geom_bar(position="stack", stat="identity") +
   labs(x = "pH", y = "Abundance") +
   theme(legend.text = element_text(size = 6), 
-  legend.key.size = unit(0.35, "cm"), 
-  legend.key.height = unit(0.35, "cm"),  
-  legend.key.width = unit(0.35, "cm")) 
+  legend.key.size = unit(0.45, "cm"), 
+  legend.key.height = unit(0.45, "cm"),  
+  legend.key.width = unit(0.45, "cm"))
 
 ```
 
@@ -117,6 +122,7 @@ select(database, Phylum, value, Layer, Year) %>%
   legend.key.width = unit(0.35, "cm")) 
 ```
 
+# Need to decrease current number of figures / create ordinations (more relevant to explain questions)
 
 **Discussion**
 
@@ -124,6 +130,10 @@ select(database, Phylum, value, Layer, Year) %>%
 
 **References**
 
+Li P, Yang SF, Lv BB, Zhao K, Lin MF, Zhou S, Song X, Tang XM. 2015. Comparison of extraction methods of total microbial DNA from freshwater. Genet Mol Res. 14(1):730-8.
+
+Monard, C., Gantner, S., Bertilsson, S., Hallin, S., & Stenlid, J. 2016. Habitat generalists and specialists in microbial communities across a terrestrial-freshwater gradient. Scientific reports, 6, 37719.
+
+Sieber, G., Beisser, D., Bock, C., & Boenigk, J. 2020. Protistan and fungal diversity in soils and freshwater lakes are substantially different. Scientific reports, 10(1), 20025.
+
 McMahon, K., S. Jones, A. Shade, R. Newton, E. Read, L. Beversdorf, R. Rohwer, B. Peterson, A. Linz, E. McDaniel, 	G. 	Wolf, and S. Schmitz. 2019. Microbial Observatory at North Temperate Lakes LTER High-resolution temporal and 	spatial dynamics of microbial community structure in freshwater bog lakes 2005 - 2009 original format ver 4. 	Environmental Data Initiative.
-
-
