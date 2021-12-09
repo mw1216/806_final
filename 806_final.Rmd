@@ -50,6 +50,7 @@ database <- distinct(inner_join(comb1, comb2))
 # relative abundance of each phlya by pH in 2009
 ```{r, echo = FALSE}
 
+col_vector <- unname(distinctColorPalette(50))
 library(ggplot2)
 select(database, Phylum, value, pH, Year) %>%
   filter(Year == 2009, pH > 0) %>% 
@@ -59,7 +60,8 @@ select(database, Phylum, value, pH, Year) %>%
   theme(legend.text = element_text(size = 6), 
   legend.key.size = unit(0.45, "cm"), 
   legend.key.height = unit(0.45, "cm"),  
-  legend.key.width = unit(0.45, "cm"))
+  legend.key.width = unit(0.45, "cm")) + scale_color_manual(
+    values = col_vector)
 
 ```
 
@@ -92,11 +94,53 @@ select(database, Month, Year, Temperature) %>%
 
 select(database, Month, Year, DO) %>%
   group_by(Year, Month) %>%
-  filter(DO != "NA", Month == "6" | Month == "7" | Month == "8") %>%
+  filter(DO != "NA") %>%
   summarize(mean_DO = mean(DO)) %>%
   ggplot(mapping = aes(x = Month, y = mean_DO, color = as.factor(Year),
   group = Year, by = Year)) + geom_point() + geom_line() + labs(color = 
+  "Year", x = "Month", y = "Dissolved Oxygen") + scale_color_brewer(palette = "Dark2") #+ scale_x_continuous(breaks=c(6, 7, 8))
+
+```
+
+```{r, echo = FALSE}
+
+select(database, Month, Year, Temperature) %>%
+  group_by(Year, Month) %>%
+  filter(Temperature != "NA", Month == 6 | Month ==
+  7 | Month == 8) %>%
+  summarize(mean_Temperature = mean(Temperature)) %>%
+  ggplot(mapping = aes(x = Month, y = mean_Temperature, color =
+  as.factor(Year),
+  group = Year, by = Year)) + geom_point() + geom_line() + labs(color = 
+  "Year", x = "Month", y = "Temperature (C)") + scale_color_brewer(palette = "Dark2") + scale_x_continuous(breaks=c(6, 7, 8))
+
+```
+
+```{r, echo = FALSE}
+
+select(database, Month, Year, DO) %>%
+  group_by(Year, Month) %>%
+  filter(DO != "NA", Month == 6 | Month ==
+  7 | Month == 8) %>%
+  summarize(mean_DO = mean(DO)) %>%
+  ggplot(mapping = aes(x = Month, y = mean_DO, color =
+  as.factor(Year),
+  group = Year, by = Year)) + geom_point() + geom_line() + labs(color = 
   "Year", x = "Month", y = "Dissolved Oxygen") + scale_color_brewer(palette = "Dark2") + scale_x_continuous(breaks=c(6, 7, 8))
+
+```
+
+```{r, echo = FALSE}
+
+select(database, Month, Year, pH) %>%
+  group_by(Year, Month) %>%
+  filter(pH != "NA", Month == 6 | Month ==
+  7 | Month == 8) %>%
+  summarize(mean_pH = mean(pH)) %>%
+  ggplot(mapping = aes(x = Month, y = mean_pH, color =
+  as.factor(Year),
+  group = Year, by = Year)) + geom_point() + geom_line() + labs(color = 
+  "Year", x = "Month", y = "pH") + scale_color_brewer(palette = "Dark2") + scale_x_continuous(breaks=c(6, 7, 8))
 
 ```
 
@@ -109,30 +153,145 @@ select(database, Depth, DO, Month, Year) %>%
 
 ```
 
-# this plot shows abundance of microbes by varying pH, only for 2009 (limited data for 2007)
+# this plot shows abundance of microbes by varying pH, only for 2009 (limited pH data for 2007)
 ```{r, echo = FALSE}
 
 select(database, Phylum, value, pH, Year) %>%
-  filter(pH > 0, Year == 2009) %>% 
-  ggplot(mapping = aes(x = pH, y = value)) + geom_bar(stat="identity") + 
-  labs(x = "pH", y = "Abundance") 
+  filter(Year == 2009, value > 100, pH != "NA") %>%
+  group_by(pH, Phylum) %>%
+  summarize(value=sum(value)) %>%
+  ggplot(mapping = aes(fill = Phylum, x = pH, y =
+  value, color = Phylum)) + geom_bar(position = 
+  "stack", stat="identity") + labs(x="pH", y="Abundance")
+
+```
+
+```{r, echo = FALSE}
+
+select(database, Phylum, value, Month, Year, Temperature) %>%
+  filter(Year == 2009, value > 100, Temperature != "NA") %>%
+  group_by(Month, Phylum) %>%
+  summarize(value=sum(value)) %>%
+  ggplot(mapping = aes(fill = Phylum, x = Month, y =
+  value, color = Phylum)) + geom_bar(position = 
+  "stack", stat="identity") + labs(x="Month", y = "Abundance") 
+
+```
+
+```{r, echo = FALSE}
+
+select(database, Phylum, value, Year, Depth) %>%
+  filter(Year == 2009, value > 1, Depth != "NA") %>%
+  group_by(Depth, Phylum) %>%
+  summarize(value=sum(value)) %>%
+  ggplot(mapping = aes(fill = Phylum, x = Depth, y =
+  value, color = Phylum)) + geom_bar(position = 
+  "stack", stat="identity") + labs(x = "Depth (m)", y = "Abundance") +   
+  scale_x_continuous(breaks=c(0,0.5,1,1.5,2,2.5)) +
+  scale_color_manual(values = col_vector)
 
 ```
 
 # Comparison of relative abundances between lake layers in 2009 - needs work
 ```{r, echo = FALSE}
+
 select(database, Phylum, value, Layer, Year) %>%
-  filter(Year == 2009) %>%
-  group_by(Layer) %>%
-  ggplot(mapping = aes(fill = Phylum, x = Layer, y = value, color =
-  Phylum)) + geom_bar(position="stack", stat="identity") +
+  filter(Year == 2009, value > 100) %>%
+  group_by(Layer, Phylum) %>%
+  summarize(value=sum(value)) %>%
+  ggplot(mapping = aes(fill = Phylum, x = Layer, y =
+  value, color = Phylum)) + geom_bar(position = 
+  "stack", stat="identity") + geom_text(aes(label = Phylum),
+  size = 3, color = "black", position = position_stack(vjust = 0.5)) +
   labs(x = "Layer", y = "Abundance") +
   theme(legend.text = element_text(size = 6), 
   legend.key.size = unit(0.35, "cm"), 
   legend.key.height = unit(0.35, "cm"),  
   legend.key.width = unit(0.35, "cm")) 
+
 ```
 
+```{r, echo = FALSE}
+
+select(database, Phylum, value, Year) %>%
+  filter(value > 100) %>%
+  group_by(Year, Phylum) %>%
+  summarize(value=sum(value)) %>%
+  ggplot(mapping = aes(fill = Phylum, x = Year, y =
+  value, color = Phylum)) + geom_bar(position = 
+  "stack", stat="identity") +
+  labs(x = "Year", y = "Abundance") +
+  theme(legend.text = element_text(size = 6), 
+  legend.key.size = unit(0.35, "cm"), 
+  legend.key.height = unit(0.35, "cm"),  
+  legend.key.width = unit(0.35, "cm")) + 
+  scale_x_continuous(breaks=c(2007, 2009))
+```
+
+```{r, echo = FALSE}
+
+select(database, Phylum, value, Layer, Year, Depth) %>%
+  filter(Year == 2009, value > 200) %>%
+  ggplot(mapping = aes(x = Phylum, y = value, color = Phylum)) + geom_bar(stat="identity")
+
+```
+
+```{r, echo = FALSE}
+library(dplyr)
+library(data.table)
+library(plotly)
+
+df <- database
+a <- list(text = sprintf("Epilimnion"),
+          font = list(size = 14),
+          yanchor = "bottom",
+          xancher = "center",
+          align = "center",
+          x = 0.5,
+          y = 1,
+          showarrow = FALSE)
+b <- list(text = sprintf("Hypolimnion"),
+          font = list(size = 14),
+          yanchor = "bottom",
+          xanchor = "center",
+          align = "center",
+          x = 0.5,
+          y = 1, 
+          showarrow = FALSE)
+
+p1 <- df %>%
+  mutate(Phylum = fct_reorder(Phylum, value, .fun = "mean", .desc = T)) %>%
+  group_by(Phylum) %>%
+  filter(Layer == "Epilimnion") %>%
+  plot_ly(x = ~Layer,
+          y = ~value,
+          color = ~Phylum,
+          colors = "Paired",
+          type = "bar",
+          legendgroup = ~Phylum,
+          showlegend = T) %>%
+  layout(barmode = "stack", legend = list(title = list(text = "Phylum")), 
+         annotations = a, xaxis = list(autorange = "reversed"))
+
+p2 <- df %>%
+  mutate(Phylum = fct_reorder(Phylum, value, .fun = "mean", .desc = T)) %>%
+  group_by(Phylum) %>%
+  filter(Layer == "Hypolimnion") %>%
+  plot_ly(x = ~Layer,
+          y = ~value,
+          color = ~Phylum,
+          colors = "Paired",
+          type = "bar",
+          legendgroup = ~Phylum,
+          showlegend = T) %>%
+  plotly::layout(barmode = "stack", legend = list(title =
+      list(text = "Phylum")), annotations = b, xaxis = list(
+      autorange = "reversed"))
+
+p <- subplot(nrows = 1, p1, p2, titleX = T, titleY = T, 
+             shareX = T, shareY = T, margin = 0.05)
+          
+```
 # Need to decrease current number of figures / create ordinations (more relevant to explain questions)
 
 **Discussion**
