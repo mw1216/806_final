@@ -1,7 +1,7 @@
 ---
 title: "806_final"
 author: "Megan Worth"
-date: "11/8/2021"
+date: "12/14/2021"
 output: pdf_document
 editor_options: 
   chunk_output_type: console
@@ -19,11 +19,11 @@ editor_options:
 
 
 
-```{r setup, include=FALSE}
+```{r setup, include=FALSE, message = FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-```{r, echo = FALSE}
+```{r, echo = FALSE, message = FALSE, warning = FALSE}
 
 sup_data <- read.csv("C:/Users/megan/Desktop/806_final/supp_data1.csv", stringsAsFactors = TRUE)
 
@@ -35,12 +35,13 @@ rel_abun <- read.csv("C:/Users/megan/Desktop/806_final/rel_abun1.csv", stringsAs
 
 ```
 
-```{r, echo = FALSE}
+```{r, echo = FALSE, message = FALSE, warning = FALSE}
 library(dplyr)
 library(tidyr)
+library(ggplot2)
 ```
 
-```{r, echo = FALSE}
+```{r, echo = FALSE, message = FALSE, warning = FALSE}
 
 comb1 <- inner_join(otu_data, rel_abun, by = "OTU")
 comb2 <- distinct(inner_join(sup_data, lake_data))
@@ -49,51 +50,7 @@ database <- distinct(inner_join(comb1, comb2))
 
 ```
 
-# relative abundance of each phlya by pH in 2009
-```{r, echo = FALSE}
-
-col_vector <- unname(distinctColorPalette(50))
-library(ggplot2)
-select(database, Phylum, value, pH, Year) %>%
-  filter(Year == 2009, pH > 0) %>% 
-  ggplot(mapping = aes(fill = Phylum, x = pH, y = value, color =
-  Phylum)) + geom_bar(position="stack", stat="identity") +
-  labs(x = "pH", y = "Abundance") +
-  theme(legend.text = element_text(size = 6), 
-  legend.key.size = unit(0.45, "cm"), 
-  legend.key.height = unit(0.45, "cm"),  
-  legend.key.width = unit(0.45, "cm")) + scale_color_manual(
-    values = col_vector)
-
-```
-
-# average temp 2007 vs. 2009
-```{r, echo = FALSE}
-
-select(database, Month, Year, Temperature) %>%
-  group_by(Year, Month) %>%
-  filter(Temperature != "NA", Month == "6" | Month == "7" | Month == "8") %>%
-  summarize(mean_temp = mean(Temperature)) %>%
-  ggplot(mapping = aes(x = Month, y = mean_temp, color = as.factor(Year),
-  group = Year, by = Year)) + geom_point() + geom_line() + labs(color = 
-  "Year", x = "Month", y = "Temperature (C)") + scale_color_brewer(palette = "Dark2") + scale_x_continuous(breaks=c(6, 7, 8))
-
-```
-
-# dissolved oxygen 2007 vs. 2009
-```{r, echo = FALSE}
-
-select(database, Month, Year, DO) %>%
-  group_by(Year, Month) %>%
-  filter(DO != "NA") %>%
-  summarize(mean_DO = mean(DO)) %>%
-  ggplot(mapping = aes(x = Month, y = mean_DO, color = as.factor(Year),
-  group = Year, by = Year)) + geom_point() + geom_line() + labs(color = 
-  "Year", x = "Month", y = "Dissolved Oxygen") + scale_color_brewer(palette = "Dark2") #+ scale_x_continuous(breaks=c(6, 7, 8))
-
-```
-
-```{r, echo = FALSE}
+```{r, echo = FALSE, message = FALSE, warning = FALSE}
 
 select(database, Month, Year, Temperature) %>%
   group_by(Year, Month) %>%
@@ -103,11 +60,11 @@ select(database, Month, Year, Temperature) %>%
   ggplot(mapping = aes(x = Month, y = mean_Temperature, color =
   as.factor(Year),
   group = Year, by = Year)) + geom_point() + geom_line() + labs(color = 
-  "Year", x = "Month", y = "Temperature (C)") + scale_color_brewer(palette = "Dark2") + scale_x_continuous(breaks=c(6, 7, 8))
+  "Year", x = "Month", y = "Temperature (C)") + scale_color_brewer(palette = "Dark2") + scale_x_continuous(breaks=c(6, 7, 8)) -> temp_graph
 
 ```
 
-```{r, echo = FALSE}
+```{r, echo = FALSE, message = FALSE, warning = FALSE}
 
 select(database, Month, Year, DO) %>%
   group_by(Year, Month) %>%
@@ -117,11 +74,11 @@ select(database, Month, Year, DO) %>%
   ggplot(mapping = aes(x = Month, y = mean_DO, color =
   as.factor(Year),
   group = Year, by = Year)) + geom_point() + geom_line() + labs(color = 
-  "Year", x = "Month", y = "Dissolved Oxygen") + scale_color_brewer(palette = "Dark2") + scale_x_continuous(breaks=c(6, 7, 8))
+  "Year", x = "Month", y = "Dissolved Oxygen") + scale_color_brewer(palette = "Dark2") + scale_x_continuous(breaks=c(6, 7, 8)) -> DO_graph
 
 ```
 
-```{r, echo = FALSE}
+```{r, echo = FALSE, message = FALSE, warning = FALSE}
 
 select(database, Month, Year, pH) %>%
   group_by(Year, Month) %>%
@@ -130,13 +87,19 @@ select(database, Month, Year, pH) %>%
   summarize(mean_pH = mean(pH)) %>%
   ggplot(mapping = aes(x = Month, y = mean_pH, color =
   as.factor(Year),
-  group = Year, by = Year)) + geom_point() + geom_line() + labs(color = 
-  "Year", x = "Month", y = "pH") + scale_color_brewer(palette = "Dark2") + scale_x_continuous(breaks=c(6, 7, 8))
+  group = Year)) + geom_point() + geom_line() + labs(color = 
+  "Year", x = "Month", y = "pH") + scale_color_brewer(palette = "Dark2") + scale_x_continuous(breaks=c(6, 7, 8)) -> pH_graph
 
 ```
 
-# keep
-```{r, echo = FALSE}
+```{r, echo = FALSE, message = FALSE, warning = FALSE}
+library(ggpubr)
+ggarrange(pH_graph, temp_graph, DO_graph, labels = c("A", "B", "C"),
+  ncol = 2, nrow = 2)
+
+```
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE}
 
 select(database, Depth, DO, Month, Year) %>%
   filter(DO != "NA", Depth != "NA", Month == 6 | Month ==
@@ -147,21 +110,7 @@ select(database, Depth, DO, Month, Year) %>%
 
 ```
 
-# maybe keep
-```{r, echo = FALSE}
-
-select(database, Phylum, value, Month, Year, Temperature) %>%
-  filter(Year == 2009, value > 100, Temperature != "NA", Month != 5) %>%
-  group_by(Month, Phylum) %>%
-  summarize(value=sum(value)) %>%
-  ggplot(mapping = aes(fill = Phylum, x = Month, y =
-  value, color = Phylum)) + geom_bar(position = 
-  "stack", stat="identity") + labs(x="Month", y = "Abundance") 
-
-```
-
-# keep
-```{r, echo = FALSE}
+```{r, echo = FALSE, message = FALSE, warning = FALSE}
 
 select(database, Phylum, value, Layer, Year) %>%
   filter(Year == 2009, value > 200) %>%
@@ -178,36 +127,63 @@ select(database, Phylum, value, Layer, Year) %>%
   legend.key.width = unit(0.35, "cm")) 
 
 ```
-# remove at end but save for code reference
-```{r, echo = FALSE}
-  theme(legend.text = element_text(size = 6), 
-  legend.key.size = unit(0.35, "cm"), 
-  legend.key.height = unit(0.35, "cm"),  
-  legend.key.width = unit(0.35, "cm")) + 
-  scale_x_continuous(breaks=c(2007, 2009))
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE}
+# maybe keep
+select(database, Phylum, value, Month, Year, Temperature) %>%
+  filter(Year == 2009, value > 100, Temperature != "NA", Month != 5) %>%
+  group_by(Month, Phylum) %>%
+  summarize(value=sum(value)) %>%
+  ggplot(mapping = aes(fill = Phylum, x = Month, y =
+  value, color = Phylum)) + geom_bar(position = 
+  "stack", stat="identity") + labs(x="Month", y = "Abundance") 
+
 ```
-# keep
-```{r, echo = FALSE}
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE}
 
 select(database, Phylum, value, Year, Month) %>%
   filter(value > 200, Year == 2007, Month == 6 | Month == 7 | Month == 8) %>%
   group_by(Year, Phylum) %>%
   summarize(value=sum(value)) %>%
   ggplot(mapping = aes(x = Phylum, y = 
-  value)) + geom_bar(stat = "identity", fill = "steelblue") + ggtitle("Most Abundant Phyla: Summer 2007") + labs(x = "Phylum", y = "Abundance") + theme(axis.text.x = element_text(angle = 90, vjust = 0.5))
+  value)) + geom_bar(stat = "identity", fill = "steelblue") + ggtitle("2007") + labs(x = "Phylum", y = "Abundance") + theme(axis.text.x = element_text(angle = 90, vjust =
+  0.5)) -> graph_1
 
 ```
-# keep
-```{r, echo = FALSE}
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE}
 
 select(database, Phylum, value, Year, Month) %>%
   filter(value > 200, Year == 2009, Month == 6 | Month == 7 | Month == 8) %>%
   group_by(Year, Phylum) %>%
   summarize(value=sum(value)) %>%
   ggplot(mapping = aes(x = Phylum, y = 
-  value)) + geom_bar(stat = "identity", fill = "Coral2") + ggtitle("Most Abundant Phyla: Summer 2009") + labs(x = "Phylum", y = "Abundance")
+  value)) + geom_bar(stat = "identity", fill = "Coral2") + ggtitle("2009") + labs(x =
+  "Phylum", y = "Abundance") + theme(axis.text.x = element_text(angle = 90, vjust =
+  0.5))-> graph_2
 ```
 
+```{r, echo = FALSE, message = FALSE, warning = FALSE}
+
+ggarrange(graph_1, graph_2, labels = c("A", "B"),
+  ncol = 2, nrow = 1, common.legend = TRUE, legend = "bottom")
+
+```
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE}
+# maybe keep
+select(database, Phylum, value, pH, Year) %>%
+  filter(Year == 2009, pH > 0, value > 100) %>% 
+  ggplot(mapping = aes(fill = Phylum, x = pH, y = value, color =
+  Phylum, by = Phylum)) + geom_bar(position="stack", stat="identity") +
+  labs(x = "pH", y = "Abundance") +
+  theme(legend.text = element_text(size = 6), 
+  legend.key.size = unit(0.45, "cm"), 
+  legend.key.height = unit(0.45, "cm"),  
+  legend.key.width = unit(0.45, "cm"))
+
+```
 
 **Discussion**
 
