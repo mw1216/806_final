@@ -2,24 +2,37 @@
 title: "Abiotic and Biotic Characteristics of Crystal Bog, Wisconsin in 2007 and 2009"
 author: "Megan Worth"
 date: "12/14/2021"
-output: pdf_document
-editor_options: 
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
+bibliography: 806_bib.bib
+editor_options:
   chunk_output_type: console
 ---
 **Introduction**
   
-  Microbial communities are responsible for carrying out crucial ecosystem functions and processes, and are therefore essential to life on Earth (Li et al., 2015). Specifically, in aquatic systems, bacterial communities play vital roles in biogeochemical cycling (Monard et al., 2016). Knowledge of the composition, structure, and distribution of microbial communities can be utilized to predict how an ecosystem may respond to environmental changes over time (Monard et al., 2016; Sieber et al., 2020).
-  The North Temperate Lakes Long Term Ecological Research (LTER) program located in Vilas County, Wisconsin has collected a myriad of data from lakes and bogs in the area. In 2007 and 2009, data on pH, dissolved oxygen (DO), and temperature were collected from Crystal Bog. Additionally, samples were collected and analyzed to identify members of the microbial community by 16S rRNA sequencing (McMahon et al., 2019). This dataset was analyzed using R v. 4.1.1 to gain an understanding of the influence these environmental factors (pH, DO, temperature) may have had on microbial community composition between Summer 2007 and Summer 2009.
+|       Microbial communities are responsible for carrying out crucial ecosystem functions and processes, and are therefore essential to life on Earth [@li_comparison_2015]. Specifically, in aquatic systems, bacterial communities play vital roles in biogeochemical cycling [@monard_habitat_2016]. Knowledge of the composition, structure, and distribution of microbial communities can be utilized to predict how an ecosystem may respond to environmental changes over time [@monard_habitat_2016, @sieber_protistan_2020].
+  
+|       The North Temperate Lakes Long Term Ecological Research (LTER) program located in Vilas County, Wisconsin has collected a myriad of data from lakes and bogs in the area. In 2007 and 2009, data on pH, dissolved oxygen (DO), and temperature were collected from Crystal Bog. Additionally, samples were collected and analyzed to identify members of the microbial community by 16S rRNA sequencing [@mcmahon_microbial_2019]. This dataset was analyzed using R v. 4.1.1 to gain an understanding of the influence these environmental factors (pH, DO, temperature) may have had on microbial community composition between Summer 2007 and Summer 2009.
 
 **Methods**
 
-  Data was collected by researchers through the North Temperate Lakes LTER in Vilas County, Wisconsin. Freshwater samples were collected from Crystal Bog in 2007 and 2009 and 16S rRNA sequencing was performed. Data was analyzed using R v. 4.1.1. 
+|       Data was collected by researchers through the North Temperate Lakes LTER in Vilas County, Wisconsin. Freshwater samples were collected from Crystal Bog in 2007 and 2009 and 16S rRNA sequencing was performed. Data was analyzed using R v. 4.1.1. 
   
 **Results and Discussion**
-  Abiotic characteristics of Crystal Bog measured in Summer 2007 and Summer 2009 were temperature (C) and DO content (mg/L). Measurements of pH were recorded only in 2007. Between June and August of 2007 and 2009, the temperature of Crystal Bog increased consistently (Figure 1A). In 2007, the DO content increased between June and August, while it decreased over the same time span in 2009 (Figure 1B). Average DO content plotted against depth (m) showed a decreasing amount of oxygen as depth increased (Figure 2). The pH of Crystal Bog in 2007 became more acidic between June and July, and increased between July and August (Figure 1C). The average pH of Crystal Bog remained acidic, with no measurements recorded over a pH of 4.0. 
-  16S rRNA sequencing of samples resulted in the recognition of 45 unique phyla across all samples in 2007 and 2009. The total abundance of each phylum ranged from 20 (FCPU426) to 5,597,312 (Proteobacteria) reads (Table 1). Samples were collected at varying depths, including both the upper (Epilimnion) layer and lower (Hypolimnion) layer of Crystal Bog. When compared, the same five major phyla (Acidobacteria, Actinobacteria, Bacteroidetes, Proteobacteria, and Verrucomicrobia) were found to dominate both layers (Figure 3). Relative abundances of the major phyla (>200 reads) were calculated separately for 2007 and 2009 due to varying numbers of samples collected per year. In 2007, eight phyla were found to make up the majority of the microbial community. In order of abundance, the eight phyla were: Proteobacteria, Actinobacteria, Acidobacteria, Verrucomicrobia, Bacteroidetes, Fusobacteria, Cyanobacteria, and OD1 (Figure 4A). In 2009, only five phyla were found to dominate the microbial community. In order of abundance, the five phyla were: Proteobacteria, Actinobacteria, Acidobacteria, Verrucomicrobia, and Bacteroidetes (Figure 4B).
   
+|       Abiotic characteristics of Crystal Bog measured in Summer 2007 and Summer 2009 were temperature (C) and DO content (mg/L). Measurements of pH were recorded only in 2007. Between June and August of 2007 and 2009, the temperature of Crystal Bog increased consistently (Figure 1A). The overall average temperature across the Summer months of 2009 was lower than those in 2007, which was unexpected due to trends of warming in northern lakes [@cavaco_freshwater_2019]. In 2007, the DO content increased between June and August, while it decreased over the same time span in 2009 (Figure 1B). However, average DO content plotted against depth (m) showed a decreasing amount of oxygen as depth increased (Figure 2). This trend helps to explain the contrasting patterns of DO content observed in 2007 vs. 2009, as there were variations in the depth that DO was measured by year. The pH of Crystal Bog in 2007 became more acidic between June and July, and increased between July and August (Figure 1C). The average pH of Crystal Bog remained acidic, with no measurements recorded over a pH of 4.0. Freshwater microbes are frequently exposed to changes in pH conditions, therefore there was unlikely to be a significant correlation found between changes in pH and microbial community composition [@joint_will_2011, @low-decarie_communities_2016].
+ 
+|       16S rRNA sequencing of samples resulted in the recognition of 45 unique phyla that had more than five reads across all samples in 2007 and 2009. The total abundance of each phylum ranged from 20 (FCPU426) to 5,597,312 (Proteobacteria) reads (Table 1). Samples were collected at varying depths, including both the upper (Epilimnion) layer and lower (Hypolimnion) layer of Crystal Bog. When compared, the same five major phyla (Acidobacteria, Actinobacteria, Bacteroidetes, Proteobacteria, and Verrucomicrobia) were found to dominate both layers (Figure 3). Relative abundances of the major phyla (>200 reads) were calculated separately for 2007 and 2009 due to varying numbers of samples collected per year. In 2007, eight phyla were found to make up the majority of the microbial community. In order of abundance, the eight phyla were: Proteobacteria, Actinobacteria, Acidobacteria, Verrucomicrobia, Bacteroidetes, Fusobacteria, Cyanobacteria, and OD1 (Figure 4A). In 2009, only five phyla were found to dominate the microbial community. In order of abundance, the five phyla were: Proteobacteria, Actinobacteria, Acidobacteria, Verrucomicrobia, and Bacteroidetes (Figure 4B). 
+|       Microbial sampling of freshwater lakes is important for determining the associations microbes may have with major processes such as stratification, which leads to significant decreases in oxygen availability in lower lake layers, and biogeochemical cycling [@morrison_spatiotemporal_2017, @joint_will_2011]. Though the stages of these processes have been well documented, the impact they may have on microbial community stability over time is less clear [@morrison_spatiotemporal_2017]. Further study of abiotic characteristics associated with freshwater lakes and their coexisting microbial communities should be performed over extended periods of time to gain a better understanding of the variability that may be caused by these processes.
 
+**References**
+
+<div id="refs"></div>
+\newpage
+
+**Figures**
 
 ```{r setup, include=FALSE, message = FALSE}
 knitr::opts_chunk$set(echo = TRUE)
@@ -54,6 +67,8 @@ database <- distinct(inner_join(comb1, comb2))
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE}
 
+latex_options = c("hold position")
+
 select(database, Month, Year, Temperature) %>%
   group_by(Year, Month) %>%
   filter(Temperature != "NA", Month == 6 | Month ==
@@ -70,6 +85,8 @@ select(database, Month, Year, Temperature) %>%
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE}
 
+latex_options = c("hold position")
+
 select(database, Month, Year, DO) %>%
   group_by(Year, Month) %>%
   filter(DO != "NA", Month == 6 | Month == 7 | Month == 8) %>%
@@ -84,6 +101,8 @@ select(database, Month, Year, DO) %>%
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE}
 
+latex_options = c("hold position")
+
 select(database, Month, Year, pH) %>%
   group_by(Year, Month) %>%
   filter(pH != "NA", Month == 6 | Month == 7 | Month == 8) %>%
@@ -96,7 +115,9 @@ select(database, Month, Year, pH) %>%
 
 ```
 
-```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.cap= "Average monthly temperature (A), dissolved oxygen (DO) content (B), and pH (C) of Crystal Bog in 2007 and 2009. Time scale covers the Summer months: June (6), July (7), and August (8)."}
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.cap= "Average monthly temperature (A), dissolved oxygen content (B), and pH (C) of Crystal Bog in 2007 and 2009. Time scale covers the Summer months: June (6), July (7), and August (8).", fig.width = 7, fig.height = 6}
+
+latex_options = c("hold position")
 
 library(ggpubr)
 ggarrange(temp_graph, DO_graph, pH_graph, labels = c("A", "B", "C"),
@@ -104,7 +125,9 @@ ggarrange(temp_graph, DO_graph, pH_graph, labels = c("A", "B", "C"),
 
 ```
 
-```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.cap = "Average dissolved oxygen (DO) content (mg/L) measured at increasing depth (m) in Crystal Bog."}
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.cap = "Average dissolved oxygen content (mg/L) measured at increasing depth (m) in Crystal Bog.", fig.width = 4, fig.height = 3}
+
+latex_options = c("hold position")
 
 select(database, Depth, DO, Month, Year) %>%
   filter(DO != "NA", Depth != "NA", Month == 6 | Month ==
@@ -113,20 +136,25 @@ select(database, Depth, DO, Month, Year) %>%
   summarize(mean_DO = mean(DO)) %>%
   ggplot(mapping = aes(x = Depth, y = mean_DO)) +
   geom_point() + geom_line() + labs(x = "Depth (m)", y =
-  "DO (mg/L)")
+  "Dissolved Oxygen (mg/L)")
 
 ```
 
-```{r, echo = FALSE, message = FALSE, warning = FALSE, }
+```{r, echo = FALSE, message = FALSE, warning = FALSE}
 library(knitr)
+
+latex_options = c("hold position")
+
 select(database, Phylum, value) %>%
   group_by(Phylum) %>%
   filter(value > 0) %>%
   summarize(value = sum(value)) %>%
-  kable(., caption = "Total abundances of each phyla in Crystal Bog", col.names = c("Phylum", "Total Reads"))   
+  kable(., caption = "Total abundances of each phyla in Crystal Bog", col.names = c("Phylum", "Total Reads"))
 ```
 
-```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.cap= "Relative abundances of the most abundant phyla (> 200 reads) identified at the upper (Epilimnion) and lower (Hypolimnion) layers of Crystal Bog."}
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.cap= "Relative abundances of the most abundant phyla (> 200 reads) identified at the upper (Epilimnion) and lower (Hypolimnion) layers of Crystal Bog.", fig.width = 6, fig.height = 4}
+
+latex_options = c("hold position")
 
 select(database, Phylum, value, Layer, Year) %>%
   filter(Year == 2009, value > 200) %>%
@@ -147,6 +175,8 @@ select(database, Phylum, value, Layer, Year) %>%
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE}
 
+latex_options = c("hold position")
+
 select(database, Phylum, value, Year, Month) %>%
   filter(value > 200, Year == 2007, Month ==
   6 | Month == 7 | Month == 8) %>%
@@ -162,6 +192,8 @@ select(database, Phylum, value, Year, Month) %>%
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE}
 
+latex_options = c("hold position")
+
 select(database, Phylum, value, Year, Month) %>%
   filter(value > 200, Year == 2009, Month ==
   6 | Month == 7 | Month == 8) %>%
@@ -174,19 +206,12 @@ select(database, Phylum, value, Year, Month) %>%
   element_text(angle = 90, vjust = 0.5))-> graph_2
 ```
 
-```{r echo = FALSE, message = FALSE, warning = FALSE, fig.cap = "Relative abundances of the dominant phyla (>200 reads) in 2007 (A) and 2009 (B)."}
+```{r echo = FALSE, message = FALSE, warning = FALSE, fig.cap = "Relative abundances of the dominant phyla (>200 reads) in 2007 (A) and 2009 (B).", fig.width = 6, fig.height = 4}
+
+latex_options = c("hold position")
 
 ggarrange(graph_1, graph_2, labels = c("A", "B"),
   ncol = 2, nrow = 1)
 
 ```
 
-**References**
-
-Li P, Yang SF, Lv BB, Zhao K, Lin MF, Zhou S, Song X, Tang XM. 2015. Comparison of extraction methods of total microbial DNA from freshwater. Genet Mol Res. 14(1):730-8.
-
-Monard, C., Gantner, S., Bertilsson, S., Hallin, S., & Stenlid, J. 2016. Habitat generalists and specialists in microbial communities across a terrestrial-freshwater gradient. Scientific reports, 6, 37719.
-
-Sieber, G., Beisser, D., Bock, C., & Boenigk, J. 2020. Protistan and fungal diversity in soils and freshwater lakes are substantially different. Scientific reports, 10(1), 20025.
-
-McMahon, K., S. Jones, A. Shade, R. Newton, E. Read, L. Beversdorf, R. Rohwer, B. Peterson, A. Linz, E. McDaniel, 	G. 	Wolf, and S. Schmitz. 2019. Microbial Observatory at North Temperate Lakes LTER High-resolution temporal and 	spatial dynamics of microbial community structure in freshwater bog lakes 2005 - 2009 original format ver 4. 	Environmental Data Initiative.
